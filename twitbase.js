@@ -1,4 +1,11 @@
-
+// Coded by @kuz_inc tutorial from https://betech.id
+var Twit = require('twit')
+const request = require('request');
+// Mengambil data dari file auth.js
+var auth = require('./auth.js')
+// Mengkoneksikan ke Twitter API
+var T = new Twit(auth);
+T.get('direct_messages/events/list', function(err, data, response) {
         var jsonData = data;
         for (var i = 0; i < jsonData['events'].length; i++) {
         var counter = jsonData['events'][i]['message_create']['message_data'];
