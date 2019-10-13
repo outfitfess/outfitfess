@@ -2,7 +2,7 @@
 var Twit = require('twit')
 const request = require('request');
 // Mengambil data dari file auth.js
-var auth = require('./auth.js')
+var auth = require('auth.js')
 // Mengkoneksikan ke Twitter API
 var T = new Twit(auth);
 T.get('direct_messages/events/list', function(err, data, response) {
